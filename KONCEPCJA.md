@@ -56,3 +56,14 @@ Uruchomienie szablonu i H2, nazwa pakietu i aplikacji, artifactId, wersja z rzec
 - Organizacja: zaproszenie współpracownika, uzupełnienie arkusza zespołów i docelowej nazwy repozytorium.
 
 Zrodla lokalne: docs/lab01.html, docs/pomysl.html, src/test/java/pl/wsb/rules/lab01/Lab01ProjectRulesTest.java w pobranym repozytorium.
+
+## Wdrożone na LAB 02
+
+Trzy własne encje bez relacji (klucze obce zostają na kolejne zajęcia):
+- `equipment.entity.Location` -> `location`: kod, nazwa, typ, aktywność oraz wbudowany adres. `Address` jest `@Embeddable`, nie tworzy własnej tabeli.
+- `equipment.entity.Equipment` -> `equipment`: numer seryjny, nazwa, producent (opcjonalny), data uruchomienia, aktywność i przykładowa wartość odtworzeniowa w PLN (`BigDecimal`, 10 cyfr, 2 po przecinku).
+- `inspection.entity.InspectionOrder` -> `inspection_order`: numer zlecenia, planowana data, status, szacowany czas w minutach i opcjonalne uwagi.
+
+`LocationType` i `InspectionStatus` zapisują się jako tekst, nie liczba porządkowa. Dane są wyłącznie demonstracyjne: trzy wiersze w każdej własnej tabeli. Brak adresu, producenta lub uwag jest celowo pokazany przez NULL.
+
+Pozostałe tabele i powiązania opisane powyżej są nadal planem rozwoju.

@@ -54,13 +54,14 @@
     <h3>Zmiany w projekcie</h3>
     <ul>
       <li><b>LAB 01:</b> Nadano nazwę przeglady, zmieniono pakiet i klasę startową, artifactId i wersję z numerami indeksów, dodano konta dwóch autorów w data.sql oraz uzupełniono wizytówkę.</li>
+      <li><b>LAB 02:</b> Dodano tabele location, equipment i inspection_order, po trzy przykładowe wiersze, tekstowe enumy LocationType i InspectionStatus oraz adres Address wbudowany w Location. Włączono reguły lab=2. Tabele nie mają jeszcze relacji.</li>
     </ul>
-    <p class="muted">Na kolejnych laboratoriach dopisujcie tu kolejne punkty.</p>
+    <p class="muted">Dane sprzętu, lokalizacji, kwoty i zlecenia są fikcyjnymi przykładami do nauki.</p>
   </section>
 
   <section class="card">
     <h2>Plan rozwoju aplikacji</h2>
-    <p>Poniższe funkcje i dane są koncepcją na kolejne laboratoria. Na LAB 01 działa aplikacja startowa, baza z kontami i ta wizytówka.</p>
+    <p>Poniższe funkcje i dane są koncepcją na kolejne laboratoria. Na LAB 02 działają aplikacja, konta zespołu i trzy własne tabele z demonstracyjnymi danymi. Relacje i funkcje obsługi przeglądów powstaną na kolejnych zajęciach.</p>
     <table>
       <tr><td>Moduły</td><td>Sprzęt i lokalizacje; zlecenia i wyniki przeglądów.</td></tr>
       <tr><td>Planowane dane</td><td>Lokalizacje, rodzaje sprzętu, egzemplarze sprzętu, zlecenia przeglądów, pozycje zleceń i przydziały serwisantów — sześć własnych tabel.</td></tr>
@@ -79,7 +80,7 @@
   </section>
   <section class="card">
     <h2>1. Zajrzyjcie do bazy danych</h2>
-    <p>Aplikacja ma wbudowaną bazę H2. Na start jest w niej jedna tabela, <code>user_account</code>, z kontami z pliku <code>data.sql</code>.</p>
+    <p>Aplikacja ma wbudowaną bazę H2. W bazie są konta <code>user_account</code> oraz trzy własne tabele: <code>location</code>, <code>equipment</code> i <code>inspection_order</code>. Dane są wczytywane z pliku <code>data.sql</code>.</p>
     <table>
       <tr><td>JDBC URL</td><td><code>jdbc:h2:file:./data/wdtb</code></td></tr>
       <tr><td>Użytkownik</td><td><code>sa</code></td></tr>
@@ -87,7 +88,9 @@
     </table>
     <a class="btn" href="/h2-console">Otwórz konsolę H2</a>
     <p class="muted" style="margin-top:12px">Spróbujcie zapytania:</p>
-    <pre>SELECT role, COUNT(*) FROM user_account GROUP BY role;</pre>
+    <pre>SELECT * FROM location;
+SELECT * FROM equipment;
+SELECT * FROM inspection_order;</pre>
   </section>
 
   <section class="card">
