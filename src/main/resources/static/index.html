@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Backend działa · WdTB-2026-Backend</title>
+<title>Przeglądy · Ewidencja sprzętu i kontroli</title>
 <style>
   :root { --ink: #141e50; --blue: #006efa; --muted: #5b6685; --line: #d5def0; --bg: #f5f8fd; --tint: #e8f0ff; --ok: #1d7a4c; }
   * { box-sizing: border-box; }
@@ -37,29 +37,46 @@
   <header>
     <img class="logo" src="merito-logo.png" alt="Uniwersytet WSB Merito Wrocław">
     <span class="status"><span class="dot" aria-hidden="true"></span>Backend działa</span>
-    <h1>Wprowadzenie do technologii backendowych</h1>
-    <p>Tę stronę serwuje Wasza aplikacja Spring Boot z pliku <code>src/main/resources/static/index.html</code>.
-       Na LAB 01 wypełnijcie poniższą wizytówkę projektu. LAB 02 zaczyna się od jej prezentacji:
-       uruchamiacie aplikację i pokazujecie tę stronę.</p>
+    <h1>Przeglądy</h1>
+    <p>Rejestr sprzętu ratowniczego i przeciwpożarowego oraz jego kontroli. Wizytówka projektu zespołowego na LAB 01.</p>
   </header>
 
   <!-- LAB 01: wizytówka Waszego projektu, na jej podstawie prezentujecie projekt na początku LAB 02.
        Zastąpcie wszystkie znaczniki „uzupełnij” w nawiasach kwadratowych (reguła R1.04). -->
   <section class="card project">
-    <h2>[uzupełnij: nazwa projektu]</h2>
-    <p class="pitch">[uzupełnij: jedno zdanie – jaki problem rozwiązuje aplikacja i dla kogo]</p>
+    <h2>Przeglądy</h2>
+    <p class="pitch">Aplikacja porządkuje ewidencję sprzętu ratowniczego i przeciwpożarowego oraz terminy i wyniki jego kontroli dla koordynatora serwisu.</p>
     <table>
-      <tr><td>Autorzy</td><td>[uzupełnij: imiona i nazwiska, grupa]</td></tr>
-      <tr><td>Dla kogo</td><td>[uzupełnij: persona, np. „Anna, właścicielka kawiarni, chce przyjmować rezerwacje stolików online”]</td></tr>
-      <tr><td>Najważniejsze funkcje</td><td>[uzupełnij: 3 funkcje, np. lista stolików, rezerwacja, raport dla właściciela]</td></tr>
+      <tr><td>Autorzy</td><td>Mateusz Masalski (89514) i Hubert Cichorz (107446)</td></tr>
+      <tr><td>Dla kogo</td><td>Marek, koordynator serwisu sprzętu na statkach i w jednostkach straży, chce w jednym miejscu sprawdzać lokalizację urządzeń, historię kontroli i zaległe przeglądy.</td></tr>
+      <tr><td>Najważniejsze funkcje</td><td>Ewidencja sprzętu i lokalizacji; planowanie i zapisywanie przeglądów; lista zaległych kontroli i historia wyników.</td></tr>
     </table>
     <h3>Zmiany w projekcie</h3>
     <ul>
-      <li><b>LAB 01:</b> [uzupełnij: co zmieniliście, np. nazwa projektu, konta zespołu, wizytówka]</li>
+      <li><b>LAB 01:</b> Nadano nazwę przeglady, zmieniono pakiet i klasę startową, artifactId i wersję z numerami indeksów, dodano konta dwóch autorów w data.sql oraz uzupełniono wizytówkę.</li>
     </ul>
     <p class="muted">Na kolejnych laboratoriach dopisujcie tu kolejne punkty.</p>
   </section>
 
+  <section class="card">
+    <h2>Plan rozwoju aplikacji</h2>
+    <p>Poniższe funkcje i dane są koncepcją na kolejne laboratoria. Na LAB 01 działa aplikacja startowa, baza z kontami i ta wizytówka.</p>
+    <table>
+      <tr><td>Moduły</td><td>Sprzęt i lokalizacje; zlecenia i wyniki przeglądów.</td></tr>
+      <tr><td>Planowane dane</td><td>Lokalizacje, rodzaje sprzętu, egzemplarze sprzętu, zlecenia przeglądów, pozycje zleceń i przydziały serwisantów — sześć własnych tabel.</td></tr>
+      <tr><td>Cykl zlecenia</td><td>Szkic → zaplanowane → w realizacji → zakończone. Szkic lub zaplanowane zlecenie można anulować.</td></tr>
+      <tr><td>Pomiary</td><td>Czas pracy w minutach, liczba urządzeń, dni opóźnienia i udział wyników negatywnych.</td></tr>
+    </table>
+    <p style="margin-top:12px">Jedno zlecenie obejmuje wiele urządzeń, a urządzenie może mieć wiele przeglądów. Pozycja zlecenia przechowuje wynik, czas pracy i następny termin kontroli. Terminy wprowadza użytkownik.</p>
+    <h3>Pytania, na które ma odpowiadać aplikacja</h3>
+    <ol>
+      <li>Ile urządzeń w każdej lokalizacji ma przekroczony termin kontroli?</li>
+      <li>Ile przeglądów zakończono w miesiącu według rodzaju sprzętu?</li>
+      <li>Jaki jest średni czas kontroli dla każdego rodzaju sprzętu?</li>
+      <li>Które lokalizacje mają najwyższy udział negatywnych wyników?</li>
+      <li>Jak rozkłada się przydzielony czas pracy między serwisantów?</li>
+    </ol>
+  </section>
   <section class="card">
     <h2>1. Zajrzyjcie do bazy danych</h2>
     <p>Aplikacja ma wbudowaną bazę H2. Na start jest w niej jedna tabela, <code>user_account</code>, z kontami z pliku <code>data.sql</code>.</p>
