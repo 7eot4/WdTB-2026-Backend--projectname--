@@ -52,7 +52,7 @@ Uruchomienie szablonu i H2, nazwa pakietu i aplikacji, artifactId, wersja z rzec
 ## Brakujace dane i czynnosci zewnetrzne
 - Temat i nazwa przeglady zatwierdzone.
 - Zespół: Mateusz Masalski (89514) i Hubert Cichorz (107446). Konta uczelniane dodane do data.sql; grupa zajęciowa pozostaje do podania.
-- Instrukcja i test R1.03 wymagaja minimum trzech kont poza demo. Dla zespolu dwuosobowego nalezy uzgodnic wymaganie z prowadzacym; nie dodajemy fikcyjnego czlonka i nie zmieniamy testu.
+- Zespół ma dwie rzeczywiste osoby. Na polecenie użytkownika dodano tymczasowe konto Jan Testowy (FIKCYJNY), jan.testowy@example.invalid, wyłącznie do kontroli liczby kont w R1.03. Konto nie reprezentuje autora; akceptacja dwuosobowego zespołu nadal wymaga uzgodnienia z prowadzącym.
 - Organizacja: zaproszenie współpracownika, uzupełnienie arkusza zespołów i docelowej nazwy repozytorium.
 
 Zrodla lokalne: docs/lab01.html, docs/pomysl.html, src/test/java/pl/wsb/rules/lab01/Lab01ProjectRulesTest.java w pobranym repozytorium.

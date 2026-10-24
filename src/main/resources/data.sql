@@ -16,6 +16,10 @@ insert into user_account (email, display_name, role, created_at) values
     ('wrx81895@student.wroclaw.merito.pl', 'Mateusz Masalski', 'USER', current_timestamp),
     ('wrx101024@student.wroclaw.merito.pl', 'Hubert Cichorz', 'USER', current_timestamp);
 
+-- FIKCYJNE konto na potrzeby tymczasowej kontroli R1.03.
+-- Nie reprezentuje trzeciego autora ani rzeczywistego członka zespołu.
+insert into user_account (email, display_name, role, created_at) values
+    ('jan.testowy@example.invalid', 'Jan Testowy (FIKCYJNY)', 'USER', current_timestamp);
 -- LAB 02: fictional teaching data only. No links between tables yet.
 -- ===== LAB 02 - location =====
 insert into location (code, name, type, active, street, city, postal_code, country_code) values
